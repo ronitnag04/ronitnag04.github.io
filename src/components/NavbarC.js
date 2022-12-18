@@ -10,15 +10,15 @@ const NavbarC = () => {
         <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
             <Nav>
                 <Nav.Link href="./">Home</Nav.Link>
-                <Nav.Link href="./">Experience</Nav.Link>
+                <Nav.Link href="/experience">Experience</Nav.Link>
                 <NavDropdown title="Projects">
                     <NavDropdown.Item href="./">Big Data Website</NavDropdown.Item>
-                    <NavDropdown.Item href="./">Spot Micro Robot Dog</NavDropdown.Item>
-                    <NavDropdown.Item href="./">Interactive Tennis Net</NavDropdown.Item>
+                    <NavDropdown.Item href="https://sites.google.com/view/spotmicro/home">Spot Micro Robot Dog</NavDropdown.Item>
+                    <NavDropdown.Item href="https://sites.google.com/view/interactive-tennis-net/home">Interactive Tennis Net</NavDropdown.Item>
                     <NavDropdown.Item href="./">DIY Lightsaber</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="./">About</Nav.Link>
-                <Nav.Link href="./">Contact</Nav.Link>
+                <Nav.Link href="/about">About</Nav.Link>
+                <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
         </Navbar.Collapse>
       </Container>
