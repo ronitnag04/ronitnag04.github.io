@@ -2,16 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    background:blue;
-    width:100vw;
-    height:100vh;
+    background:${props => props.color || 'white'};
+    width:100%;
+    height:7000px;
 `
 
-const Splash = () => {
+const Splash = (props) => {
   return (
-    <Container>
-        
-    </Container>
+    <Container
+      color={props.color}
+    />
   )
 }
 
