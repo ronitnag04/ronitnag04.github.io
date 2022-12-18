@@ -1,11 +1,12 @@
 import './App.css';
-import Navbar from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarC from './components/NavbarC';
 import Splash from './components/Splash';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <NavbarC/>
       <Splash
         color="#1a1918"
       />
