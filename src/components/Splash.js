@@ -13,13 +13,14 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 3.0rem;
 `
-
-
+const topBorder = {
+  borderTop: '1px solid #fff',
+}
 
 const Splash = () => {
   return (
     <Header>
-      <Container bg="dark">
+      <Container bg="dark" style={topBorder}>
       <Row className="pt-5">
         <Col md={6}>
           <Title>Hello!</Title>

@@ -2,9 +2,7 @@ import React from 'react'
 import { Container, Navbar, Nav, NavDropdown} from 'react-bootstrap'
 
 const navbarStyle = {
-  background: 'rgb(0,0,0)',
   background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(82,87,88,1) 85%, rgba(0,0,0,1) 100%)',
-  borderBottom: '1px solid #fff',
 };
 
 const NavbarC = () => {
