@@ -1,15 +1,42 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Row, Image, Col } from 'react-bootstrap'
+import styled from 'styled-components'
+
+const Header = styled.header`
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(82,87,88,1) 85%, rgba(0,0,0,1) 100%);
+`
+
+const Title = styled.h1`
+  color:white;
+  font-family: 'Helvetica 65 Medium', sans-serif;
+  font-weight: 700;
+  font-size: 3.0rem;
+`
 
 
-const Splash = (props) => {
+
+const Splash = () => {
   return (
-    <Container>
-      <h1>Hello!</h1>
-      <h3>Thanks for visiting my page.</h3>
-      <h3>It is still under construction, so please check back later</h3>
-      <h3>See you soon!</h3>
+    <Header>
+      <Container bg="dark">
+      <Row className="pt-5">
+        <Col md={6}>
+          <Title>Hello!</Title>
+        </Col>
+        <Col md={6}>
+          <Image fluid src={require('../images/main_lightsaber.png')} alt='Image not found'></Image>
+        </Col>
+        
+
+      </Row>
+      
     </Container>
+
+
+    </Header>
+
+    
   )
 }
 

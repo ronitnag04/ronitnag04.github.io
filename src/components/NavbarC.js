@@ -1,9 +1,15 @@
 import React from 'react'
 import { Container, Navbar, Nav, NavDropdown} from 'react-bootstrap'
 
+const navbarStyle = {
+  background: 'rgb(0,0,0)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(82,87,88,1) 85%, rgba(0,0,0,1) 100%)',
+  borderBottom: '1px solid #fff',
+};
+
 const NavbarC = () => {
   return (
-    <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="md" variant="dark" style={navbarStyle}>
       <Container>
         <Navbar.Brand href="./">Ronit Nagarapu</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

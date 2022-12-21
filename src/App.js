@@ -7,9 +7,7 @@ function App() {
   return (
     <div className="App">
       <NavbarC/>
-      <Splash
-        color="#1a1918"
-      />
+      <Splash/>
     </div>
   );
 }
