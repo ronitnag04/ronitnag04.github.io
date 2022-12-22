@@ -4,5 +4,6 @@ This is my personal website, but it is still under construction. Please check ba
 
 # Credits
 
+- Built with React, React-Bootstrap, Figma
 - Favicons created by [RealFaviconGenerator](https://realfavicongenerator.net/)
-- Font style is Helvetica 65 Medium
+- Font styles: Fira Sans Condensed, Inter
