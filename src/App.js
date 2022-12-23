@@ -8,6 +8,7 @@ import Projects from './pages/projects';
 import About from './pages/about';
 import Contact from './pages/contact';
 import NoPage from './pages/404';
+import FooterC from './components/FooterC';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
+      <FooterC />
     </BrowserRouter>
   );
 }
