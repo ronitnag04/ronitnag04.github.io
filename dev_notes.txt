@@ -1,0 +1,8 @@
+Build and deploy:
+npm run deploy -- -m "<commit message on gh-pages branch>"
+
+Serve build locally:
+serve -s build
+
+Develop locally:
+npm run start
