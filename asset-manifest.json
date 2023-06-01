@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f8f0963d.css",
-    "main.js": "/static/js/main.ff346ce9.js",
+    "main.js": "/static/js/main.f889255f.js",
     "static/js/787.303a6154.chunk.js": "/static/js/787.303a6154.chunk.js",
     "static/media/spot_micro_thumbnail.jpg": "/static/media/spot_micro_thumbnail.b9fae38270695820233a.jpg",
     "static/media/DSDP_applied_materials_poster.jpg": "/static/media/DSDP_applied_materials_poster.9a4db97707637bf517d6.jpg",
@@ -16,11 +16,11 @@
     "static/media/fira-sans-condensed-vietnamese-400-normal.woff2": "/static/media/fira-sans-condensed-vietnamese-400-normal.5d640267ebfaae02b751.woff2",
     "index.html": "/index.html",
     "main.f8f0963d.css.map": "/static/css/main.f8f0963d.css.map",
-    "main.ff346ce9.js.map": "/static/js/main.ff346ce9.js.map",
+    "main.f889255f.js.map": "/static/js/main.f889255f.js.map",
     "787.303a6154.chunk.js.map": "/static/js/787.303a6154.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f8f0963d.css",
-    "static/js/main.ff346ce9.js"
+    "static/js/main.f889255f.js"
   ]
 }
