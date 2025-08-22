@@ -846,6 +846,25 @@ main {
 }
 
 /**
+ * responsive larger than 400px screen
+ */
+
+@media (min-width: 400px) {
+
+  /**
+   * #SIDEBAR
+   */
+
+  .info_more-btn span {
+    display: block;
+    font-size: var(--fs-8);
+  }
+
+  .info_more-btn ion-icon { display: none; }
+
+}
+
+/**
  * responsive larger than 450px screen
  */
 
@@ -947,13 +966,6 @@ main {
     right: -30px;
     padding: 10px 15px;
   }
-
-  .info_more-btn span {
-    display: block;
-    font-size: var(--fs-8);
-  }
-
-  .info_more-btn ion-icon { display: none; }
 
   .separator { margin: 32px 0; }
 
