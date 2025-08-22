@@ -535,6 +535,35 @@ main {
 
 .article-title { margin-bottom: 30px; }
 
+/* Resume download using title and icon */
+.resume-download {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--white-2);
+}
+
+.resume-download a {
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.resume-download ion-icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: var(--fs-1);
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 5px;
+}
+
+/* Hover effects for both text and icon when either is hovered */
+.resume-download:hover  {
+  color: var(--light-gray);
+}
+
+.resume-download:hover ion-icon {
+  color: var(--vegas-gold);
+}
+
 /**
  * education and experience 
  */
