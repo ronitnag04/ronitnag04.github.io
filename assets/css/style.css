@@ -626,6 +626,50 @@ main {
   line-height: 1.6;
 }
 
+/**
+ * skills 
+ */
+
+ .pill-cloud .filter-list {
+  margin-left: 25px;
+ }
+
+.pill-cloud { margin-bottom: 30px; }
+
+.pill-cloud .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.pill-cloud-list {
+  font-size: var(--fs-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 25px;
+}
+
+.pill-cloud-item {
+  background-color: var(--jet);
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: none;
+}
+
+.pill-cloud-item.active {
+  display: block;
+}
+
+.pill-cloud-text {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+/* TODO: Add responsive styling for pill cloud list*/
+
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
@@ -942,6 +986,8 @@ main {
   /**
    * #RESUME
    */
+
+  /* education and experience */
 
   .timeline-list { margin-left: 65px; }
 

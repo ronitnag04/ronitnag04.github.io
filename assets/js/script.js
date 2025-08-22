@@ -1,11 +1,7 @@
 'use strict';
 
-
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -14,22 +10,34 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-
 // custom select variables
-const select = document.querySelector("[data-select]");
+const selects = document.querySelectorAll("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+// Add click event to all select dropdowns
+selects.forEach(select => {
+  select.addEventListener("click", function () { elementToggleFunc(this); });
+});
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
+    let selectedValue = this.innerText.toLowerCase().replace(/\s+/g, '-');
+    
+    // Find the parent select dropdown and its corresponding select value
+    const parentSelect = this.closest('.filter-select-box');
+    const selectValue = parentSelect ? parentSelect.querySelector("[data-select-value]") : null;
+    const select = parentSelect ? parentSelect.querySelector("[data-select]") : null;
+    
+    if (selectValue) {
+      selectValue.innerText = this.innerText;
+    }
+    if (select) {
+      elementToggleFunc(select);
+    }
+    
     filterFunc(selectedValue);
 
   });
@@ -55,22 +63,65 @@ const filterFunc = function (selectedValue) {
 }
 
 // add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
+// Track last clicked button for each filter section
+let lastClickedBtns = {};
 
 for (let i = 0; i < filterBtn.length; i++) {
 
   filterBtn[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    let selectedValue = this.innerText.toLowerCase().replace(/\s+/g, '-');
+    
+    // Find the parent section to update the correct select value
+    const parentSection = this.closest('.projects, .pill-cloud');
+    const selectValue = parentSection ? parentSection.querySelector("[data-select-value]") : null;
+    if (selectValue) {
+      selectValue.innerText = this.innerText;
+    }
+    
     filterFunc(selectedValue);
 
-    lastClickedBtn.classList.remove("active");
+    // Find the filter list this button belongs to
+    const filterList = this.closest('.filter-list');
+    const filterListId = filterList ? Array.from(document.querySelectorAll('.filter-list')).indexOf(filterList) : 0;
+    
+    // Remove active class from last clicked button in this section
+    if (lastClickedBtns[filterListId]) {
+      lastClickedBtns[filterListId].classList.remove("active");
+    }
+    
+    // Add active class to current button
     this.classList.add("active");
-    lastClickedBtn = this;
+    lastClickedBtns[filterListId] = this;
 
   });
 
+}
+
+// Function to reset all filters to "All"
+function resetFiltersToAll() {
+  // Reset all filter items to active (show all)
+  filterFunc("all");
+  
+  // Reset all filter buttons to show "All" as active
+  const allFilterLists = document.querySelectorAll('.filter-list');
+  allFilterLists.forEach((filterList, listIndex) => {
+    const buttons = filterList.querySelectorAll('[data-filter-btn]');
+    buttons.forEach((button, buttonIndex) => {
+      if (button.innerText.toLowerCase() === 'all') {
+        button.classList.add('active');
+        lastClickedBtns[listIndex] = button;
+      } else {
+        button.classList.remove('active');
+      }
+    });
+  });
+  
+  // Reset all select dropdowns to show "Select category"
+  const allSelectValues = document.querySelectorAll('[data-select-value]');
+  allSelectValues.forEach(selectValue => {
+    selectValue.innerText = 'Select category';
+  });
 }
 
 // page navigation variables
@@ -91,6 +142,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.remove("active");
       }
     }
+
+    // Reset all filters to "All" when navigating between pages
+    resetFiltersToAll();
 
   });
 }
