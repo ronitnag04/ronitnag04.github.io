@@ -626,6 +626,10 @@ main {
   line-height: 1.6;
 }
 
+.timeline-text:not(:last-child) {
+  padding-bottom: 10px;
+}
+
 /**
  * skills 
  */
