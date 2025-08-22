@@ -832,6 +832,20 @@ main {
 \*-----------------------------------*/
 
 /**
+ * responsive larger than 300px screen
+ */
+
+ @media (min-width: 300px) {
+
+  /**
+   * #NAVBAR 
+   */
+
+  .navbar-link { --fs-8: 14px;}
+
+}
+
+/**
  * responsive larger than 450px screen
  */
 
